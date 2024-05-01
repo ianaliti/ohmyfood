@@ -42,10 +42,20 @@ $grey-color: rgba(243, 243, 243, 1);
     border-radius: 20px;
     @include font-el;
     @include center;
-    width: 100%;
+    width: 95%;
     height: 72px;
     gap: 25px;
-    margin: 10px 0;
+    margin: 10px 0; 
+}
+
+@mixin fonc-num {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    border-radius: 25px;
+    background-color: $purple-color;
+    left: 20px;
+    @include center;
 }
 
 * {
@@ -75,7 +85,6 @@ header {
         height: 50px;
         background-color: rgba(234, 234, 234, 1);
         @include border-shadow;
-        // filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
 
         .icon {
             padding-right: 10px;
@@ -123,8 +132,13 @@ header {
         flex-direction: column;
         margin-top: 20px;
 
+        .fon-num {
+            @include fonc-num;
+        }
+
         .fonctionnement_cart {
             @include fonction-filter;
+            
         }
     }
 
