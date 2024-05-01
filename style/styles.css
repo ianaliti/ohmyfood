@@ -1,23 +1,27 @@
 * {
   font-family: "Roboto", sans-serif;
+  margin: 0;
+}
+
+.body .main-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0;
 }
 
 header .logo {
   margin: 10px 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 header .logo img {
   width: 70%;
 }
 header .header-location {
   display: flex;
-  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   height: 50px;
   background-color: rgb(234, 234, 234);
 }
@@ -25,10 +29,44 @@ header .header-location .icon {
   padding-right: 10px;
 }
 
-main .banner {
-  height: 30%;
+.banner {
+  width: 100%;
+  height: 285px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-main .banner h2 {
-  font-size: 20px;
+.banner .banner-info {
+  flex-direction: column;
+  width: 90%;
+  gap: 20px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner .banner-info h2 {
+  font-size: 24px;
   font-weight: 700px;
+}
+.banner .banner-info p {
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.restaurants .resto_cards {
+  flex-direction: column;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.restaurants .resto_cards .card {
+  width: 90%;
+}
+.restaurants .resto_cards .card .card-image {
+  width: 100%;
+  height: 240px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=styles.css.map */
