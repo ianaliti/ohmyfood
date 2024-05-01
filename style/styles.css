@@ -4,8 +4,9 @@
 }
 
 .body .main-container {
-  display: flex;
   flex-direction: column;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -24,6 +25,7 @@ header .header-location {
   justify-content: center;
   height: 50px;
   background-color: rgb(234, 234, 234);
+  filter: drop-shadow(1px 0px 10px #b3b3b3);
 }
 header .header-location .icon {
   padding-right: 10px;
@@ -32,6 +34,7 @@ header .header-location .icon {
 .banner {
   width: 100%;
   height: 285px;
+  background-color: #F5F5F5;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +44,19 @@ header .header-location .icon {
   width: 90%;
   gap: 20px;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner .banner-info .btn {
+  height: 50px;
+  border-radius: 25px;
+  background: linear-gradient(rgb(255, 121, 218), rgb(147, 86, 220));
+  color: #F5F5F5;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid;
+  padding: 13px 18px;
   display: flex;
   align-items: center;
   justify-content: center;
