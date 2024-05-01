@@ -45,7 +45,7 @@ $grey-color: rgba(243, 243, 243, 1);
     width: 95%;
     height: 72px;
     gap: 25px;
-    margin: 10px 0; 
+    margin: 10px 0;
 }
 
 @mixin fonc-num {
@@ -54,7 +54,8 @@ $grey-color: rgba(243, 243, 243, 1);
     width: 24px;
     border-radius: 25px;
     background-color: $purple-color;
-    left: 20px;
+    left: -10px;
+    top: 30px;
     @include center;
 }
 
@@ -102,7 +103,6 @@ header {
     .banner-info {
         flex-direction: column;
         width: 90%;
-        gap: 20px;
         text-align: center;
         @include center;
 
@@ -127,19 +127,34 @@ header {
     text-align: start;
     height: 440px;
 
-    .fonct-carts {
+    .fonct-cards {
         @include center;
         flex-direction: column;
         margin-top: 20px;
 
-        .fon-num {
-            @include fonc-num;
+        .fonc-card {
+            @include border-shadow;
+            width: 95%;
+
+            .fon-num {
+                @include fonc-num;
+            }
+
+            .fonctionnement_card {
+                @include fonction-filter;
+
+                .fonc-content{
+                    display: flex;
+                    justify-content: start;
+                    width: 210px;
+                    gap: 20px;
+                }
+            }
         }
 
-        .fonctionnement_cart {
-            @include fonction-filter;
-            
-        }
+
+
+
     }
 
 

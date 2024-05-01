@@ -42,7 +42,6 @@ header .header-location .icon {
 .banner .banner-info {
   flex-direction: column;
   width: 90%;
-  gap: 20px;
   text-align: center;
   display: flex;
   align-items: center;
@@ -76,25 +75,30 @@ header .header-location .icon {
   text-align: start;
   height: 440px;
 }
-.fonctionnement .fonct-carts {
+.fonctionnement .fonct-cards {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin-top: 20px;
 }
-.fonctionnement .fonct-carts .fon-num {
+.fonctionnement .fonct-cards .fonc-card {
+  filter: drop-shadow(1px 0px 10px #b3b3b3);
+  width: 95%;
+}
+.fonctionnement .fonct-cards .fonc-card .fon-num {
   position: absolute;
   height: 24px;
   width: 24px;
   border-radius: 25px;
   background-color: rgb(147, 86, 220);
-  left: 20px;
+  left: -10px;
+  top: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.fonctionnement .fonct-carts .fonctionnement_cart {
+.fonctionnement .fonct-cards .fonc-card .fonctionnement_card {
   background-color: rgb(243, 243, 243);
   border-radius: 20px;
   font-size: 16px;
@@ -106,6 +110,12 @@ header .header-location .icon {
   height: 72px;
   gap: 25px;
   margin: 10px 0;
+}
+.fonctionnement .fonct-cards .fonc-card .fonctionnement_card .fonc-content {
+  display: flex;
+  justify-content: start;
+  width: 210px;
+  gap: 20px;
 }
 
 .restaurants .resto_cards {
