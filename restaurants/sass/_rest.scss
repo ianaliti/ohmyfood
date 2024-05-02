@@ -1,10 +1,18 @@
 @use 'homepage/sass/_homepage' as *;
 
 header {
+    .logo {
+        a {
+            left: 17px;
+            position: absolute;
+            color: black;
+        }
+    }
+
     .header-banner {
         img {
             width: 100%;
-            height: 210px;
+            height: 275px;
             object-fit: cover;
         }
     }
@@ -14,24 +22,30 @@ main {
     width: 100%;
     background-color: $grey-color;
     margin-top: -30px;
-    border-radius: 25px;
+    border-radius: 25px 25px 0 0;
     position: relative;
 
     .title {
         @include center;
         justify-content: space-between;
-        padding: 20px;
+        padding: 20px 13px 0;
     }
 
     .meal-menu {
-        margin: 15px;
-        
+        margin: 40px 13px;
+
         .menu-title {
             font-size: 16px;
             font-weight: 300;
-            border-bottom: 1px solid $blue-color;
             text-transform: uppercase;
+            width: 100%;
         }
+
+        .border-bottom {
+            width: 15%;
+            border-bottom: 2px solid $blue-color;
+        }
+
         .cards {
             @include center;
             flex-direction: column;
@@ -39,11 +53,11 @@ main {
             margin: 15px 0;
 
             .card {
-                padding: 15px;
+                padding: 13px 10px;
                 width: 95%;
                 background-color: white;
                 border-radius: 15px;
-                @include border-shadow;
+                // @include border-shadow;
                 font-size: 18px;
                 font-weight: 500;
                 display: flex;
@@ -60,11 +74,14 @@ main {
         }
 
     }
+
     .btn {
         @include center;
+
         button {
             @include btn;
-            margin: 10px 0 20px;
+            margin: 10px 0 40px;
+            width: 190px;
         }
     }
 }

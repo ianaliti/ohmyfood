@@ -16,10 +16,9 @@ header .logo {
   align-items: center;
   justify-content: center;
 }
-
 header .logo img {
   width: 45%;
-  margin: 20px;
+  margin: 5px;
 }
 header .header-location {
   display: flex;
@@ -27,7 +26,8 @@ header .header-location {
   justify-content: center;
   height: 50px;
   background-color: rgb(234, 234, 234);
-  filter: drop-shadow(1px 0px 10px #b3b3b3);
+  filter: drop-shadow(0 4px 2px #b3b3b3);
+  box-shadow: 0 0 10px #b3b3b3;
 }
 header .header-location .icon {
   padding-right: 10px;
@@ -35,7 +35,7 @@ header .header-location .icon {
 
 .banner {
   width: 100%;
-  height: 285px;
+  height: 300px;
   background-color: #F5F5F5;
   display: flex;
   align-items: center;
@@ -57,12 +57,12 @@ header .header-location .icon {
   color: #F5F5F5;
   border: none;
   padding: 13px 18px;
-  font-size: 16px;
   font-weight: 500;
+  font-size: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(1px 0px 10px #b3b3b3);
+  filter: drop-shadow(2px 2px 5px #b3b3b3);
 }
 .banner .banner-info p {
   font-size: 18px;
@@ -71,11 +71,11 @@ header .header-location .icon {
 
 h2 {
   font-size: 24px;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .fonctionnement {
-  padding: 20px;
+  padding: 40px 20px;
   text-align: start;
 }
 .fonctionnement .fonct-cards {
@@ -86,7 +86,7 @@ h2 {
   margin: 20px 0;
 }
 .fonctionnement .fonct-cards .fonc-card {
-  filter: drop-shadow(1px 0px 10px #b3b3b3);
+  filter: drop-shadow(2px 4px 10px #cdcdcd);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,6 +100,9 @@ h2 {
   background-color: rgb(147, 86, 220);
   left: 0;
   top: 30px;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,7 +110,6 @@ h2 {
 .fonctionnement .fonct-cards .fonc-card .fonctionnement_card {
   background-color: rgb(243, 243, 243);
   border-radius: 20px;
-  font-size: 16px;
   font-weight: 500;
   display: flex;
   align-items: center;
@@ -119,8 +121,8 @@ h2 {
 .fonctionnement .fonct-cards .fonc-card .fonctionnement_card .fonc-content {
   display: flex;
   justify-content: start;
-  width: 200px;
-  gap: 10px;
+  width: 80%;
+  gap: 20px;
 }
 
 .restaurants {
@@ -128,8 +130,7 @@ h2 {
   padding: 50px 20px;
 }
 .restaurants .resto_cards {
-  flex-direction: column;
-  gap: 20px;
+  margin: 15px 0;
 }
 .restaurants .resto_cards a {
   display: flex;
@@ -142,6 +143,7 @@ h2 {
   font-weight: 700;
   background-color: white;
   border-radius: 20px;
+  filter: drop-shadow(0 4px 15px #dadada);
 }
 .restaurants .resto_cards a .card {
   width: 100%;
@@ -149,8 +151,7 @@ h2 {
 .restaurants .resto_cards a .card .card-image {
   width: 100%;
   height: 210px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -164,6 +165,11 @@ h2 {
 .restaurants .resto_cards a .card .card-content p {
   font-size: 17px;
   font-weight: 300;
+  margin: 5px 0;
+}
+.restaurants .resto_cards a .card .icon-heart {
+  position: relative;
+  right: 15px;
 }
 
 footer {
@@ -181,8 +187,6 @@ footer a {
   justify-content: start;
   width: 100%;
   text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
   color: white;
   margin-bottom: 10px;
 }
@@ -190,7 +194,14 @@ footer a .a_footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   font-weight: 500;
   gap: 10px;
-}/*# sourceMappingURL=styles.css.map */
+}
+footer a .a_footer .footer-p-icon {
+  font-weight: 400;
+}
+footer a .footer-p {
+  font-weight: 300;
+}
+
+/*# sourceMappingURL=_homepage.css.map */
