@@ -42,8 +42,9 @@ main {
         }
 
         .border-bottom {
-            width: 15%;
-            border-bottom: 2px solid $blue-color;
+            width: 10%;
+            border-bottom: 3px solid $light-green-color;
+            margin-top: 5px;
         }
 
         .cards {

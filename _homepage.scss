@@ -1,4 +1,5 @@
 $purple-color: rgba(147, 86, 220, 1);
+$light-purple: rgba(255, 121, 218, 1);
 $dark-blue-color: rgba(0, 58, 104, 1);
 $blue-color: rgba(137, 200, 250, 1);
 $green-color: rgba(0, 135, 102, 1);
@@ -16,10 +17,14 @@ $grey-color: rgba(243, 243, 243, 1);
     filter: drop-shadow($t $r $b darken($grey-color, $br));
 }
 
+@mixin linear-gradient {
+    background-image: linear-gradient(35deg, $purple-color, $light-purple, $purple-color, $light-purple);
+}
+
 @mixin btn {
     height: 50px;
     border-radius: 25px;
-    background: linear-gradient(rgba(255, 121, 218, 1), $purple-color);
+    background-image: linear-gradient(181deg, $light-purple 5%, $purple-color, $purple-color, $light-purple);
     color: #F5F5F5;
     border: none;
     padding: 13px 18px;
@@ -27,6 +32,38 @@ $grey-color: rgba(243, 243, 243, 1);
     font-size: 16px;
     @include center;
     @include shadow(2px, 2px, 5px, 25%);
+    background-size: 500%;
+    background-position: right;
+    transition: all 1s ease;
+
+    &:hover {
+        background-position: left;
+        @include shadow(2px, 5px, 3px, 35%);
+    }
+}
+
+@mixin icon-heart {
+    transition: all 0.5s;
+
+    &:hover {
+        color: $purple-color;
+        font-weight: 700;
+    }
+}
+
+@mixin loader {
+    border: 12px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 12px solid #444444;
+    width: 70px;
+    height: 70px;
+    animation: spin 1s linear infinite;
+
+    @keyframes spin {
+        100% {
+            transform: rotate(360deg);
+        }
+    }
 }
 
 
@@ -41,6 +78,21 @@ $grey-color: rgba(243, 243, 243, 1);
         @include center;
     }
 }
+
+
+#loader {
+   @include loader;
+}
+
+.center {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
 
 header {
     .logo {
@@ -190,6 +242,15 @@ h2 {
                 .icon-heart {
                     position: relative;
                     right: 15px;
+
+                    i {
+                        @include icon-heart;
+
+                        .fa-solid {
+                            @include icon-heart;
+
+                        }
+                    }
                 }
             }
         }
@@ -222,6 +283,7 @@ footer {
 
             .footer-p-icon {
                 font-weight: 400;
+                font-size: 16px;
             }
         }
 
