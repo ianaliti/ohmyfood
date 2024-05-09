@@ -9,7 +9,7 @@ body .loader-parent {
   background-color: transparent;
   position: absolute;
   z-index: 2;
-  animation: back-color 3s linear;
+  animation: back-color 4s ease-in;
   animation-iteration-count: 1;
 }
 @keyframes back-color {
