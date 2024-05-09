@@ -268,13 +268,6 @@ h2 {
   color: rgb(147, 86, 220);
   font-weight: 700;
 }
-.restaurants .resto_cards a .card .icon-heart i .fa-solid {
-  transition: all 0.5s;
-}
-.restaurants .resto_cards a .card .icon-heart i .fa-solid:hover {
-  color: rgb(147, 86, 220);
-  font-weight: 700;
-}
 
 footer {
   padding: 20px;
@@ -390,6 +383,13 @@ main .title h2 {
   font-size: 28px;
   font-weight: 400;
   font-style: italic;
+}
+main .title i {
+  transition: all 0.5s;
+}
+main .title i:hover {
+  color: rgb(147, 86, 220);
+  font-weight: 700;
 }
 @media (min-width: 1024px) {
   main .title {

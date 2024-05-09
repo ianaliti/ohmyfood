@@ -255,7 +255,7 @@ h2 {
     @media (min-width: $desktop-width) {
         padding: 50px 180px;
     }
-    
+
     @media (min-width: $fourk) {
         padding: 40px 400px;
     }
@@ -315,11 +315,6 @@ h2 {
 
                     i {
                         @include icon-heart;
-
-                        .fa-solid {
-                            @include icon-heart;
-
-                        }
                     }
                 }
             }

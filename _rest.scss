@@ -29,10 +29,6 @@ header {
 
 main {
     width: 100%;
-    // background-color: $grey-color;
-    // margin-top: -30px;
-    // border-radius: 25px 25px 0 0;
-    // position: relative;
 
     @media (min-width: $desktop-width) {
         @include center;
@@ -62,6 +58,10 @@ main {
             font-size: 28px;
             font-weight: 400;
             font-style: italic;
+        }
+
+        i {
+            @include icon-heart;
         }
 
         @media (min-width: $desktop-width) {
