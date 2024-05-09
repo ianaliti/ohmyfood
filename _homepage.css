@@ -130,12 +130,27 @@ h2 {
   padding: 40px 20px;
   text-align: start;
 }
+@media (min-width: 1024px) {
+  .fonctionnement {
+    padding: 40px 180px;
+  }
+}
+@media (min-width: 2560px) {
+  .fonctionnement {
+    padding: 40px 400px;
+  }
+}
 .fonctionnement .fonct-cards {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   margin: 20px 0;
+}
+@media (min-width: 1024px) {
+  .fonctionnement .fonct-cards {
+    flex-direction: row;
+  }
 }
 .fonctionnement .fonct-cards .fonc-card {
   filter: drop-shadow(2px 4px 10px #cdcdcd);
@@ -180,8 +195,26 @@ h2 {
   background-color: rgb(243, 243, 243);
   padding: 50px 20px;
 }
+@media (min-width: 1024px) {
+  .restaurants {
+    padding: 50px 180px;
+  }
+}
+@media (min-width: 2560px) {
+  .restaurants {
+    padding: 40px 400px;
+  }
+}
 .restaurants .resto_cards {
   margin: 15px 0;
+}
+@media (min-width: 1024px) {
+  .restaurants .resto_cards {
+    width: 100%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .restaurants .resto_cards a {
   display: flex;
@@ -195,6 +228,11 @@ h2 {
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(0 4px 15px #dadada);
+}
+@media (min-width: 1024px) {
+  .restaurants .resto_cards a {
+    width: 47%;
+  }
 }
 .restaurants .resto_cards a .card {
   width: 100%;
@@ -241,32 +279,60 @@ footer {
   padding: 20px;
   background-color: rgb(53, 53, 53);
 }
+@media (min-width: 1024px) {
+  footer {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding-top: 40px;
+  }
+}
 footer img {
-  height: 20%;
-  width: 30%;
-  padding: 20px 0;
+  height: 30%;
+  width: 40%;
+  padding-bottom: 16px;
   filter: invert(1);
 }
-footer a {
+@media (min-width: 1024px) {
+  footer img {
+    height: 2%;
+    width: 6%;
+    padding-left: 30px;
+    padding-bottom: 0;
+  }
+}
+footer .a_footers {
   display: flex;
-  justify-content: start;
-  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+@media (min-width: 1024px) {
+  footer .a_footers {
+    flex-direction: row;
+  }
+}
+footer .a_footers a {
   text-decoration: none;
   color: white;
   margin-bottom: 10px;
 }
-footer a .a_footer {
+@media (min-width: 1024px) {
+  footer .a_footers a {
+    padding: 0 15px;
+    margin: 0;
+  }
+}
+footer .a_footers a .a_footer {
   display: flex;
-  align-items: center;
-  justify-content: center;
   font-weight: 500;
   gap: 10px;
 }
-footer a .a_footer .footer-p-icon {
+footer .a_footers a .a_footer .footer-p-icon {
   font-weight: 400;
   font-size: 16px;
 }
-footer a .footer-p {
+footer .a_footers a .footer-p {
   font-weight: 300;
 }
 
