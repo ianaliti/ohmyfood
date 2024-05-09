@@ -1,4 +1,13 @@
-@use 'homepage/sass/_homepage' as *;
+@use './_homepage' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
+
+
+
+body {
+    @include center;
+}
+
 
 header {
     .logo {
@@ -20,15 +29,49 @@ header {
 
 main {
     width: 100%;
-    background-color: $grey-color;
-    margin-top: -30px;
-    border-radius: 25px 25px 0 0;
-    position: relative;
+    // background-color: $grey-color;
+    // margin-top: -30px;
+    // border-radius: 25px 25px 0 0;
+    // position: relative;
+
+    @media (min-width: $desktop-width) {
+        @include center;
+        flex-direction: column;
+    }
+
+    .menu {
+        background-color: $grey-color;
+        margin-top: -30px;
+        border-radius: 25px 25px 0 0;
+        position: relative;
+        width: 100%;
+
+        @media (min-width: $desktop-width) {
+            width: 80%;
+            flex-direction: column;
+        }
+    }
 
     .title {
         @include center;
         justify-content: space-between;
         padding: 20px 13px 0;
+
+        h2 {
+            font-family: 'Shrikhand', serif;
+            font-size: 28px;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        @media (min-width: $desktop-width) {
+            justify-content: center;
+            margin-top: 20px;
+
+            i {
+                margin-left: 24px;
+            }
+        }
     }
 
     .meal-menu {
