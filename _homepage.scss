@@ -52,18 +52,32 @@ $grey-color: rgba(243, 243, 243, 1);
 }
 
 @mixin loader {
-    border: 12px solid #f3f3f3;
+    // border: 12px solid #f3f3f3;
+    // border-top: 12px solid #444444;
     border-radius: 50%;
-    border-top: 12px solid #444444;
     width: 70px;
     height: 70px;
-    animation: spin 1s linear infinite;
+    animation: spin 3s linear;
+    position: absolute;
+    z-index: 2;
 
     @keyframes spin {
-        100% {
+        0%{
+            opacity: 1;
+            transform: rotate(0deg);
+            border: 12px solid #f3f3f3;
+            border-top: 12px solid #444444;
+          }
+          50%{
+            opacity: 0.5;
+            transform: rotate(180deg);
+          }
+          100%{
+            display: none;
+            opacity: 0;
             transform: rotate(360deg);
-        }
-    }
+          }
+    }    
 }
 
 
@@ -72,27 +86,40 @@ $grey-color: rgba(243, 243, 243, 1);
     margin: 0;
 }
 
-.body {
-    .main-container {
-        flex-direction: column;
-        @include center;
+body {
+    .loader-parent {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        position: absolute;
+        z-index: 2;
+        animation: back-color 3s linear;
+        animation-iteration-count: 1;
+
+    @keyframes back-color {
+          0%{
+            background-color: white;
+          }
+          100%{
+            display: none;
+            background-color: transparent;
+            opacity: 0;
+          }
+    } 
+    
+        #loader {
+            @include loader;
+         }
+         
+         .center {
+             top: 0;
+             bottom: 0;
+             left: 0;
+             right: 0;
+             margin: auto;
+         }
     }
 }
-
-
-#loader {
-   @include loader;
-}
-
-.center {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    margin: auto;
-}
-
 
 header {
     .logo {
@@ -170,7 +197,6 @@ h2 {
                 border-radius: 25px;
                 background-color: $purple-color;
                 left: 0;
-                top: 30px;
                 color: white;
                 font-size: 14px;
                 font-weight: 500;
