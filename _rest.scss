@@ -76,6 +76,7 @@ main {
 
     .meal-menu {
         margin: 40px 13px;
+        @include menu;
 
         .menu-title {
             font-size: 16px;
@@ -101,12 +102,17 @@ main {
                 width: 95%;
                 background-color: white;
                 border-radius: 15px;
-                // @include border-shadow;
                 font-size: 18px;
                 font-weight: 500;
                 display: flex;
                 justify-content: center;
                 flex-direction: column;
+                @include  shadow(2px, 2px, 5px, 25%);
+                @include menu;
+
+                @for $i from 1 to 10 {
+                    &:nth-child(#{$i}) { animation-delay: $i * 0.5s; }
+                  }
 
                 .card-content {
                     @include center;
