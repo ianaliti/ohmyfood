@@ -6,8 +6,9 @@ $green-color: rgba(0, 135, 102, 1);
 $light-green-color: rgba(153, 226, 208, 1);
 $grey-color: rgba(243, 243, 243, 1);
 
-
-$desktop-width: 1024px;
+$mobile: 320px;
+$laptop: 768px;
+$desktop: 1024px;
 $fourk: 2560px;
 
 
@@ -49,9 +50,12 @@ $fourk: 2560px;
 @mixin icon-heart {
     transition: all 0.5s;
 
-    &:hover {
-        color: $purple-color;
-        font-weight: 700;
+    &:hover i::before{
+        background: linear-gradient($purple-color, $light-purple);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        content: "\f004";
+        font-weight: 900;
     }
 }
 
@@ -131,6 +135,8 @@ $fourk: 2560px;
 }
 
 body {
+    min-width: $mobile;
+
     .loader-parent {
         @include loader-parent;
 
@@ -208,8 +214,8 @@ h2 {
     text-align: start;
 
 
-    @media (min-width: $desktop-width) {
-        padding: 40px 180px;
+    @media (min-width: $desktop) {
+        padding: 40px 85px;
     }
 
     @media (min-width: $fourk) {
@@ -222,7 +228,7 @@ h2 {
         flex-direction: column;
         margin: 20px 0;
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             flex-direction: row;
         }
 
@@ -243,6 +249,14 @@ h2 {
                 font-size: 14px;
                 font-weight: 500;
                 @include center;
+
+                @media (min-width: $laptop) {
+                    left: 14px;
+                }
+
+                @media (min-width: $desktop) {
+                    left: 0;
+                }
             }
 
             .fonctionnement_card {
@@ -260,6 +274,17 @@ h2 {
                     justify-content: start;
                     width: 80%;
                     gap: 20px;
+
+                    i {
+                        @include center;
+                        color: $purple-color;
+                    }
+
+                    p {
+                        @media(min-width: $mobile) {
+                            font-size: 15px;
+                        }
+                    }
                 }
             }
         }
@@ -270,8 +295,8 @@ h2 {
     background-color: $grey-color;
     padding: 50px 20px;
 
-    @media (min-width: $desktop-width) {
-        padding: 50px 180px;
+    @media (min-width: $desktop) {
+        padding: 50px 85px;
     }
 
     @media (min-width: $fourk) {
@@ -282,7 +307,7 @@ h2 {
     .resto_cards {
         margin: 15px 0;
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             width: 100%;
             flex-wrap: wrap;
             display: flex;
@@ -300,7 +325,7 @@ h2 {
             border-radius: 20px;
             @include shadow(0, 4px, 15px, 10);
 
-            @media (min-width: $desktop-width) {
+            @media (min-width: $desktop) {
                 width: 47%;
             }
 
@@ -330,9 +355,10 @@ h2 {
                 .icon-heart {
                     position: relative;
                     right: 15px;
+                    @include icon-heart;
 
                     i {
-                        @include icon-heart;
+                        font-weight: 400;
                     }
                 }
             }
@@ -344,7 +370,7 @@ footer {
     padding: 20px;
     background-color: rgba(53, 53, 53, 1);
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $desktop) {
         display: flex;
         justify-content: flex-start;
         align-items: center;
@@ -358,12 +384,12 @@ footer {
         padding-bottom: 16px;
         filter: invert(1);
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             height: 2%;
             width: 6%;
             padding-left: 30px;
             padding-bottom: 0;
-            
+
         }
     }
 
@@ -372,7 +398,7 @@ footer {
         flex-direction: column;
         justify-content: flex-start;
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             flex-direction: row;
         }
 
@@ -380,23 +406,23 @@ footer {
             text-decoration: none;
             color: white;
             margin-bottom: 10px;
-            
-            @media (min-width: $desktop-width) {
+
+            @media (min-width: $desktop) {
                 padding: 0 15px;
                 margin: 0;
             }
-    
+
             .a_footer {
                 display: flex;
                 font-weight: 500;
                 gap: 10px;
-    
+
                 .footer-p-icon {
                     font-weight: 400;
                     font-size: 16px;
                 }
             }
-    
+
             .footer-p {
                 font-weight: 300;
             }

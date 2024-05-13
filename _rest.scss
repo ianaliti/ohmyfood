@@ -30,7 +30,7 @@ header {
 main {
     width: 100%;
 
-    @media (min-width: $desktop-width) {
+    @media (min-width: $desktop) {
         @include center;
         flex-direction: column;
     }
@@ -42,7 +42,7 @@ main {
         position: relative;
         width: 100%;
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             width: 80%;
             flex-direction: column;
         }
@@ -64,7 +64,7 @@ main {
             @include icon-heart;
         }
 
-        @media (min-width: $desktop-width) {
+        @media (min-width: $desktop) {
             justify-content: center;
             margin-top: 20px;
 
