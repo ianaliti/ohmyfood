@@ -355,6 +355,19 @@ $fourk: 2560px;
                         border-top-right-radius: 20px;
                     }
 
+                    .nouveau {
+                        position: absolute;
+                        background-color: $light-green-color;
+                        color: $green-color;
+                        left: 305px;
+                        top: 15px;
+                        width: 80px;
+                        height: 30px;
+                        font-size: 14px;
+                        font-weight: 500;
+                        @include center;
+                    }
+
                     .card-content {
                         @include center;
                         justify-content: space-between;

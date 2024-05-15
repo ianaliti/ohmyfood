@@ -269,6 +269,20 @@ h2 {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
+.restaurants .resto_cards a .card .nouveau {
+  position: absolute;
+  background-color: rgb(153, 226, 208);
+  color: rgb(0, 135, 102);
+  left: 305px;
+  top: 15px;
+  width: 80px;
+  height: 30px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .restaurants .resto_cards a .card .card-content {
   display: flex;
   align-items: center;
