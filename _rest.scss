@@ -60,7 +60,7 @@ main {
             font-style: italic;
         }
 
-        i {
+        .icon-heart {
             @include icon-heart;
         }
 
@@ -98,27 +98,61 @@ main {
             margin: 15px 0;
 
             .card {
-                padding: 13px 10px;
                 width: 95%;
                 background-color: white;
                 border-radius: 15px;
                 font-size: 18px;
                 font-weight: 500;
                 display: flex;
-                justify-content: center;
-                flex-direction: column;
-                @include  shadow(2px, 2px, 5px, 25%);
+                justify-content: space-between;
+                @include shadow(2px, 2px, 5px, 25%);
                 @include menu;
+                @include checked;
 
                 @for $i from 1 to 10 {
-                    &:nth-child(#{$i}) { animation-delay: $i * 0.5s; }
-                  }
+                    &:nth-child(#{$i}) {
+                        animation-delay: $i * 0.5s;
+                    }
+                }
 
-                .card-content {
-                    @include center;
-                    justify-content: space-between;
-                    font-weight: 300;
-                    font-size: 15px;
+                .card-title {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    padding: 13px 10px;
+
+                    .card-content {
+                        @include center;
+                        justify-content: space-between;
+                        font-weight: 300;
+                        font-size: 15px;
+
+                        .description {
+                            @media (max-width: $mobile) {
+                                text-overflow: ellipsis;
+                                overflow: hidden;
+                                width: 220px;
+                                white-space: nowrap;
+                            }
+                        }
+                    }
+                }
+
+                .check {
+                    display: none;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $light-green-color;
+                    width: 59px;
+                    margin-left: 5px;
+                    border-top-right-radius: 15px;
+                    border-bottom-right-radius: 15px;
+
+                    i {
+                        background-color: white;
+                        border-radius: 25px;
+                        color: $light-green-color;
+                    }
                 }
             }
         }

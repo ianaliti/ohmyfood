@@ -1,5 +1,5 @@
 $purple-color: rgba(147, 86, 220, 1);
-$light-purple: rgba(255, 121, 218, 1);
+$light-purple: #FF79DA;
 $dark-blue-color: rgba(0, 58, 104, 1);
 $blue-color: rgba(137, 200, 250, 1);
 $green-color: rgba(0, 135, 102, 1);
@@ -7,6 +7,7 @@ $light-green-color: rgba(153, 226, 208, 1);
 $grey-color: rgba(243, 243, 243, 1);
 
 $mobile: 320px;
+$mobileM: 375px;
 $laptop: 768px;
 $desktop: 1024px;
 $fourk: 2560px;
@@ -29,7 +30,7 @@ $fourk: 2560px;
 @mixin btn {
     height: 50px;
     border-radius: 25px;
-    background-image: linear-gradient(181deg, $light-purple 5%, $purple-color, $purple-color, $light-purple);
+    background-image: linear-gradient(181deg, $light-purple 5%, $purple-color);
     color: #F5F5F5;
     border: none;
     padding: 13px 18px;
@@ -50,7 +51,7 @@ $fourk: 2560px;
 @mixin icon-heart {
     transition: all 0.5s;
 
-    &:hover i::before{
+    &:hover i::before {
         background: linear-gradient($purple-color, $light-purple);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
@@ -128,304 +129,318 @@ $fourk: 2560px;
     }
 }
 
+@mixin checked {
+    transition: all 0.5s;
 
-* {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-}
-
-body {
-    min-width: $mobile;
-
-    .loader-parent {
-        @include loader-parent;
-
-        #loader {
-            @include loader;
-        }
-
-        .center {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
+    &:hover>.check {
+        display: flex;
     }
-}
-
-header {
-    .logo {
-        margin: 10px 0;
-        @include center;
-
-        img {
-            width: 45%;
-            margin: 5px;
-        }
-    }
-
-    .header-location {
-        @include center;
-        height: 50px;
-        background-color: rgba(234, 234, 234, 1);
-        @include shadow(0, 4px, 2px, 25%);
-        box-shadow: 0 0 10px darken($grey-color, 25%);
-
-        .icon {
-            padding-right: 10px;
-        }
+    &:hover > .card-title > .card-content > .description {
+        text-overflow: ellipsis;
+        overflow: hidden;
+        width: 210px;
+        white-space: nowrap;
     }
 }
 
 
-.banner {
-    width: 100%;
-    height: 300px;
-    background-color: #F5F5F5;
-    @include center;
-
-    .banner-info {
-        flex-direction: column;
-        width: 90%;
-        text-align: center;
-        gap: 20px;
-        @include center;
-
-        .btn {
-            @include btn;
-        }
-
-        p {
-            font-size: 18px;
-            font-weight: 300;
-        }
+    * {
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
     }
 
-}
+    body {
+        min-width: $mobile;
 
-h2 {
-    font-size: 24px;
-    font-weight: 700;
-}
+        .loader-parent {
+            @include loader-parent;
 
-.fonctionnement {
-    padding: 40px 20px;
-    text-align: start;
-
-
-    @media (min-width: $desktop) {
-        padding: 40px 85px;
-    }
-
-    @media (min-width: $fourk) {
-        padding: 40px 400px;
-    }
-
-
-    .fonct-cards {
-        @include center;
-        flex-direction: column;
-        margin: 20px 0;
-
-        @media (min-width: $desktop) {
-            flex-direction: row;
-        }
-
-
-        .fonc-card {
-            @include shadow(2px, 4px, 10px, 15%);
-            @include center;
-            width: 100%;
-
-            .fon-num {
-                position: absolute;
-                height: 24px;
-                width: 24px;
-                border-radius: 25px;
-                background-color: $purple-color;
-                left: 0;
-                color: white;
-                font-size: 14px;
-                font-weight: 500;
-                @include center;
-
-                @media (min-width: $laptop) {
-                    left: 14px;
-                }
-
-                @media (min-width: $desktop) {
-                    left: 0;
-                }
+            #loader {
+                @include loader;
             }
 
-            .fonctionnement_card {
-                background-color: $grey-color;
-                border-radius: 20px;
-                font-weight: 500;
+            .center {
+                top: 0;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+        }
+    }
+
+    header {
+        .logo {
+            margin: 10px 0;
+            @include center;
+
+            img {
+                width: 45%;
+                margin: 5px;
+            }
+        }
+
+        .header-location {
+            @include center;
+            height: 50px;
+            background-color: rgba(234, 234, 234, 1);
+            @include shadow(0, 4px, 2px, 25%);
+            box-shadow: 0 0 10px darken($grey-color, 25%);
+
+            .icon {
+                padding-right: 10px;
+            }
+        }
+    }
+
+
+    .banner {
+        width: 100%;
+        height: 300px;
+        background-color: #F5F5F5;
+        @include center;
+
+        .banner-info {
+            flex-direction: column;
+            width: 90%;
+            text-align: center;
+            gap: 20px;
+            @include center;
+
+            .btn {
+                @include btn;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 300;
+            }
+        }
+
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 700;
+    }
+
+    .fonctionnement {
+        padding: 40px 20px;
+        text-align: start;
+
+
+        @media (min-width: $desktop) {
+            padding: 40px 85px;
+        }
+
+        @media (min-width: $fourk) {
+            padding: 40px 400px;
+        }
+
+
+        .fonct-cards {
+            @include center;
+            flex-direction: column;
+            margin: 20px 0;
+
+            @media (min-width: $desktop) {
+                flex-direction: row;
+            }
+
+
+            .fonc-card {
+                @include shadow(2px, 4px, 10px, 15%);
                 @include center;
-                width: 93%;
-                height: 72px;
-                margin: 10px 0;
+                width: 100%;
 
+                .fon-num {
+                    position: absolute;
+                    height: 24px;
+                    width: 24px;
+                    border-radius: 25px;
+                    background-color: $purple-color;
+                    left: 0;
+                    color: white;
+                    font-size: 14px;
+                    font-weight: 500;
+                    @include center;
 
-                .fonc-content {
-                    display: flex;
-                    justify-content: start;
-                    width: 80%;
-                    gap: 20px;
-
-                    i {
-                        @include center;
-                        color: $purple-color;
+                    @media (min-width: $laptop) {
+                        left: 14px;
                     }
 
-                    p {
-                        @media(min-width: $mobile) {
-                            font-size: 15px;
+                    @media (min-width: $desktop) {
+                        left: 0;
+                    }
+                }
+
+                .fonctionnement_card {
+                    background-color: $grey-color;
+                    border-radius: 20px;
+                    font-weight: 500;
+                    @include center;
+                    width: 93%;
+                    height: 72px;
+                    margin: 10px 0;
+
+
+                    .fonc-content {
+                        display: flex;
+                        justify-content: start;
+                        width: 80%;
+                        gap: 20px;
+
+                        i {
+                            @include center;
+                            color: $purple-color;
+                        }
+
+                        p {
+                            @media(min-width: $mobile) {
+                                font-size: 15px;
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
 
-.restaurants {
-    background-color: $grey-color;
-    padding: 50px 20px;
-
-    @media (min-width: $desktop) {
-        padding: 50px 85px;
-    }
-
-    @media (min-width: $fourk) {
-        padding: 40px 400px;
-    }
-
-
-    .resto_cards {
-        margin: 15px 0;
+    .restaurants {
+        background-color: $grey-color;
+        padding: 50px 20px;
 
         @media (min-width: $desktop) {
-            width: 100%;
-            flex-wrap: wrap;
-            display: flex;
-            justify-content: space-between;
+            padding: 50px 85px;
         }
 
-        a {
-            @include center;
+        @media (min-width: $fourk) {
+            padding: 40px 400px;
+        }
+
+
+        .resto_cards {
             margin: 15px 0;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-            font-weight: 700;
-            background-color: white;
-            border-radius: 20px;
-            @include shadow(0, 4px, 15px, 10);
 
             @media (min-width: $desktop) {
-                width: 47%;
-            }
-
-            .card {
                 width: 100%;
+                flex-wrap: wrap;
+                display: flex;
+                justify-content: space-between;
+            }
 
-                .card-image {
+            a {
+                @include center;
+                margin: 15px 0;
+                text-decoration: none;
+                color: black;
+                font-size: 18px;
+                font-weight: 700;
+                background-color: white;
+                border-radius: 20px;
+                @include shadow(0, 4px, 15px, 10);
+
+                @media (min-width: $desktop) {
+                    width: 47%;
+                }
+
+                .card {
                     width: 100%;
-                    height: 210px;
-                    object-fit: cover;
-                    border-top-left-radius: 20px;
-                    border-top-right-radius: 20px;
-                }
 
-                .card-content {
-                    @include center;
-                    justify-content: space-between;
-                    padding: 15px;
-
-                    p {
-                        font-size: 17px;
-                        font-weight: 300;
-                        margin: 5px 0;
+                    .card-image {
+                        width: 100%;
+                        height: 210px;
+                        object-fit: cover;
+                        border-top-left-radius: 20px;
+                        border-top-right-radius: 20px;
                     }
-                }
 
-                .icon-heart {
-                    position: relative;
-                    right: 15px;
-                    @include icon-heart;
+                    .card-content {
+                        @include center;
+                        justify-content: space-between;
+                        padding: 15px;
 
-                    i {
-                        font-weight: 400;
+                        p {
+                            font-size: 17px;
+                            font-weight: 300;
+                            margin: 5px 0;
+                        }
+                    }
+
+                    .icon-heart {
+                        position: relative;
+                        right: 15px;
+                        @include icon-heart;
+
+                        i {
+                            font-weight: 400;
+                        }
                     }
                 }
             }
         }
     }
-}
 
-footer {
-    padding: 20px;
-    background-color: rgba(53, 53, 53, 1);
-
-    @media (min-width: $desktop) {
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: row-reverse;
-        padding-top: 40px;
-    }
-
-    img {
-        height: 30%;
-        width: 40%;
-        padding-bottom: 16px;
-        filter: invert(1);
+    footer {
+        padding: 20px;
+        background-color: rgba(53, 53, 53, 1);
 
         @media (min-width: $desktop) {
-            height: 2%;
-            width: 6%;
-            padding-left: 30px;
-            padding-bottom: 0;
-
-        }
-    }
-
-    .a_footers {
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start;
-
-        @media (min-width: $desktop) {
-            flex-direction: row;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            flex-direction: row-reverse;
+            padding-top: 40px;
         }
 
-        a {
-            text-decoration: none;
-            color: white;
-            margin-bottom: 10px;
+        img {
+            height: 30%;
+            width: 40%;
+            padding-bottom: 16px;
+            filter: invert(1);
 
             @media (min-width: $desktop) {
-                padding: 0 15px;
-                margin: 0;
+                height: 2%;
+                width: 6%;
+                padding-left: 30px;
+                padding-bottom: 0;
+
+            }
+        }
+
+        .a_footers {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+
+            @media (min-width: $desktop) {
+                flex-direction: row;
             }
 
-            .a_footer {
-                display: flex;
-                font-weight: 500;
-                gap: 10px;
+            a {
+                text-decoration: none;
+                color: white;
+                margin-bottom: 10px;
 
-                .footer-p-icon {
-                    font-weight: 400;
-                    font-size: 16px;
+                @media (min-width: $desktop) {
+                    padding: 0 15px;
+                    margin: 0;
                 }
-            }
 
-            .footer-p {
-                font-weight: 300;
+                .a_footer {
+                    display: flex;
+                    font-weight: 500;
+                    gap: 10px;
+
+                    .footer-p-icon {
+                        font-weight: 400;
+                        font-size: 16px;
+                    }
+                }
+
+                .footer-p {
+                    font-weight: 300;
+                }
             }
         }
     }
-}
