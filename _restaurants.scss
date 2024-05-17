@@ -1,11 +1,14 @@
-@use './_homepage' as *;
+@use './styles/partials/colors' as c;
+@use './styles/partials/media' as m;
+@use './styles/partials/mixins' as mix;
+@use './_homepage';
 
 @import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');
 
 
 
 body {
-    @include center;
+    @include mix.center;
 }
 
 
@@ -30,26 +33,26 @@ header {
 main {
     width: 100%;
 
-    @media (min-width: $desktop) {
-        @include center;
+    @media (min-width: m.$desktop) {
+        @include mix.center;
         flex-direction: column;
     }
 
     .menu {
-        background-color: $grey-color;
+        background-color: c.$grey-color;
         margin-top: -30px;
         border-radius: 25px 25px 0 0;
         position: relative;
         width: 100%;
 
-        @media (min-width: $desktop) {
+        @media (min-width: m.$desktop) {
             width: 80%;
             flex-direction: column;
         }
     }
 
     .title {
-        @include center;
+        @include mix.center;
         justify-content: space-between;
         padding: 20px 13px 0;
 
@@ -61,10 +64,10 @@ main {
         }
 
         .icon-heart {
-            @include icon-heart;
+            @include mix.icon-heart;
         }
 
-        @media (min-width: $desktop) {
+        @media (min-width: m.$desktop) {
             justify-content: center;
             margin-top: 20px;
 
@@ -75,24 +78,25 @@ main {
     }
 
     .meal-menu {
-        margin: 40px 13px;
-        @include menu;
+        margin: 20px 13px;
+        @include mix.menu;
 
         .menu-title {
             font-size: 16px;
             font-weight: 300;
             text-transform: uppercase;
             width: 100%;
+            margin: initial;
         }
 
         .border-bottom {
             width: 10%;
-            border-bottom: 3px solid $light-green-color;
+            border-bottom: 3px solid c.$light-green-color;
             margin-top: 5px;
         }
 
         .cards {
-            @include center;
+            @include mix.center;
             flex-direction: column;
             gap: 15px;
             margin: 15px 0;
@@ -105,9 +109,9 @@ main {
                 font-weight: 500;
                 display: flex;
                 justify-content: space-between;
-                @include shadow(2px, 2px, 5px, 25%);
-                @include menu;
-                @include checked;
+                @include mix.shadow(2px, 2px, 5px, 25%);
+                @include mix.menu;
+                @include mix.checked;
 
                 @for $i from 1 to 10 {
                     &:nth-child(#{$i}) {
@@ -121,19 +125,26 @@ main {
                     width: 100%;
                     padding: 13px 10px;
 
+
                     .card-content {
-                        @include center;
+                        @include mix.center;
                         justify-content: space-between;
                         font-weight: 300;
                         font-size: 15px;
+                        padding-top: 5px;
 
                         .description {
-                            @media (max-width: $mobile) {
+                            font-weight: 300;
+                            @media (max-width: m.$mobile) {
                                 text-overflow: ellipsis;
                                 overflow: hidden;
                                 width: 220px;
                                 white-space: nowrap;
                             }
+                        }
+
+                        p {
+                            font-weight: 500;
                         }
                     }
                 }
@@ -142,7 +153,7 @@ main {
                     display: none;
                     justify-content: center;
                     align-items: center;
-                    background-color: $light-green-color;
+                    background-color: c.$light-green-color;
                     width: 59px;
                     margin-left: 5px;
                     border-top-right-radius: 15px;
@@ -151,7 +162,7 @@ main {
                     i {
                         background-color: white;
                         border-radius: 25px;
-                        color: $light-green-color;
+                        color: c.$light-green-color;
                     }
                 }
             }
@@ -160,10 +171,10 @@ main {
     }
 
     .btn {
-        @include center;
+        @include mix.center;
 
         button {
-            @include btn;
+            @include mix.btn;
             margin: 10px 0 40px;
             width: 190px;
         }

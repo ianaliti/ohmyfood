@@ -15,6 +15,7 @@ body .loader-parent {
   z-index: 2;
   animation: back-color 4s ease-in;
   animation-iteration-count: 1;
+  animation-fill-mode: forwards;
 }
 @keyframes back-color {
   0% {
@@ -22,8 +23,7 @@ body .loader-parent {
   }
   100% {
     display: none;
-    background-color: transparent;
-    opacity: 0;
+    animation-fill-mode: forwards;
   }
 }
 body .loader-parent #loader {
@@ -49,6 +49,7 @@ body .loader-parent #loader {
     display: none;
     opacity: 0;
     transform: rotate(360deg);
+    z-index: 0;
   }
 }
 body .loader-parent .center {
@@ -273,12 +274,12 @@ h2 {
   position: absolute;
   background-color: rgb(153, 226, 208);
   color: rgb(0, 135, 102);
-  left: 305px;
-  top: 15px;
   width: 80px;
   height: 30px;
   font-size: 14px;
   font-weight: 500;
+  top: 15px;
+  right: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -298,13 +299,16 @@ h2 {
 .restaurants .resto_cards a .card .icon-heart {
   position: relative;
   right: 15px;
-  transition: all 0.5s;
+}
+.restaurants .resto_cards a .card .icon-heart i::before {
+  content: "\f004";
+  transition: 0.5s cubic-bezier(0.86, 0.01, 0.15, 0.99);
 }
 .restaurants .resto_cards a .card .icon-heart:hover i::before {
+  color: rgb(147, 86, 220);
   background: linear-gradient(rgb(147, 86, 220), #FF79DA);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  content: "\f004";
   font-weight: 900;
 }
 .restaurants .resto_cards a .card .icon-heart i {
@@ -426,14 +430,15 @@ main .title h2 {
   font-weight: 400;
   font-style: italic;
 }
-main .title .icon-heart {
-  transition: all 0.5s;
+main .title .icon-heart i::before {
+  content: "\f004";
+  transition: 0.5s cubic-bezier(0.86, 0.01, 0.15, 0.99);
 }
 main .title .icon-heart:hover i::before {
+  color: rgb(147, 86, 220);
   background: linear-gradient(rgb(147, 86, 220), #FF79DA);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-  content: "\f004";
   font-weight: 900;
 }
 @media (min-width: 1024px) {
@@ -446,7 +451,7 @@ main .title .icon-heart:hover i::before {
   }
 }
 main .meal-menu {
-  margin: 40px 13px;
+  margin: 20px 13px;
   animation: menushow 2.5s ease;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
@@ -465,6 +470,7 @@ main .meal-menu .menu-title {
   font-weight: 300;
   text-transform: uppercase;
   width: 100%;
+  margin: initial;
 }
 main .meal-menu .border-bottom {
   width: 10%;
@@ -551,6 +557,10 @@ main .meal-menu .cards .card .card-title .card-content {
   justify-content: space-between;
   font-weight: 300;
   font-size: 15px;
+  padding-top: 5px;
+}
+main .meal-menu .cards .card .card-title .card-content .description {
+  font-weight: 300;
 }
 @media (max-width: 320px) {
   main .meal-menu .cards .card .card-title .card-content .description {
@@ -559,6 +569,9 @@ main .meal-menu .cards .card .card-title .card-content {
     width: 220px;
     white-space: nowrap;
   }
+}
+main .meal-menu .cards .card .card-title .card-content p {
+  font-weight: 500;
 }
 main .meal-menu .cards .card .check {
   display: none;
@@ -604,4 +617,4 @@ main .btn button:hover {
   filter: drop-shadow(2px 5px 3px #9a9a9a);
 }
 
-/*# sourceMappingURL=_rest.css.map */
+/*# sourceMappingURL=_restaurants.css.map */
