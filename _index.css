@@ -289,29 +289,28 @@ h2 {
   justify-content: center;
   justify-content: space-between;
   padding: 15px;
+  width: 85%;
 }
-.restaurants .resto_cards a .card .card-content p {
+.restaurants .resto_cards a .card .card-content .card-text p {
   font-size: 17px;
   font-weight: 300;
   margin: 5px 0;
 }
-.restaurants .resto_cards a .card .icon-heart {
-  position: relative;
-  right: 15px;
+.restaurants .resto_cards a .card .card-content .icons-heart i {
+  position: absolute;
 }
-.restaurants .resto_cards a .card .icon-heart i::before {
-  content: "\f004";
-  transition: 0.5s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
 }
-.restaurants .resto_cards a .card .icon-heart:hover i::before {
-  color: rgb(147, 86, 220);
-  background: linear-gradient(rgb(147, 86, 220), #FF79DA);
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full::before {
+  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  color: transparent;
 }
-.restaurants .resto_cards a .card .icon-heart i {
-  font-weight: 400;
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full:hover {
+  opacity: 1;
 }
 
 footer {
@@ -335,9 +334,9 @@ footer img {
 }
 @media (min-width: 1024px) {
   footer img {
-    height: 2%;
-    width: 6%;
-    padding-left: 30px;
+    height: 6%;
+    width: 12%;
+    padding-left: 80px;
     padding-bottom: 0;
   }
 }
@@ -375,4 +374,4 @@ footer .a_footers a .footer-p {
   font-weight: 300;
 }
 
-/*# sourceMappingURL=_homepage.css.map */
+/*# sourceMappingURL=_index.css.map */

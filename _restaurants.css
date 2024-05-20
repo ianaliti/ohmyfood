@@ -290,29 +290,28 @@ h2 {
   justify-content: center;
   justify-content: space-between;
   padding: 15px;
+  width: 85%;
 }
-.restaurants .resto_cards a .card .card-content p {
+.restaurants .resto_cards a .card .card-content .card-text p {
   font-size: 17px;
   font-weight: 300;
   margin: 5px 0;
 }
-.restaurants .resto_cards a .card .icon-heart {
-  position: relative;
-  right: 15px;
+.restaurants .resto_cards a .card .card-content .icons-heart i {
+  position: absolute;
 }
-.restaurants .resto_cards a .card .icon-heart i::before {
-  content: "\f004";
-  transition: 0.5s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
 }
-.restaurants .resto_cards a .card .icon-heart:hover i::before {
-  color: rgb(147, 86, 220);
-  background: linear-gradient(rgb(147, 86, 220), #FF79DA);
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full::before {
+  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  color: transparent;
 }
-.restaurants .resto_cards a .card .icon-heart i {
-  font-weight: 400;
+.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full:hover {
+  opacity: 1;
 }
 
 footer {
@@ -336,9 +335,9 @@ footer img {
 }
 @media (min-width: 1024px) {
   footer img {
-    height: 2%;
-    width: 6%;
-    padding-left: 30px;
+    height: 6%;
+    width: 12%;
+    padding-left: 80px;
     padding-bottom: 0;
   }
 }
@@ -387,6 +386,16 @@ header .logo a {
   position: absolute;
   color: black;
 }
+@media (min-width: 768px) {
+  header .logo a {
+    left: 170px;
+  }
+}
+@media (min-width: 2560px) {
+  header .logo a {
+    left: 710px;
+  }
+}
 header .header-banner img {
   width: 100%;
   height: 275px;
@@ -423,6 +432,7 @@ main .title {
   justify-content: center;
   justify-content: space-between;
   padding: 20px 13px 0;
+  width: 85%;
 }
 main .title h2 {
   font-family: "Shrikhand", serif;
@@ -430,16 +440,21 @@ main .title h2 {
   font-weight: 400;
   font-style: italic;
 }
-main .title .icon-heart i::before {
-  content: "\f004";
-  transition: 0.5s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+main .title .icons-heart i {
+  position: absolute;
 }
-main .title .icon-heart:hover i::before {
-  color: rgb(147, 86, 220);
-  background: linear-gradient(rgb(147, 86, 220), #FF79DA);
+main .title .icons-heart .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
+main .title .icons-heart .my-heart-full::before {
+  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
-  -webkit-text-fill-color: transparent;
-  font-weight: 900;
+  color: transparent;
+}
+main .title .icons-heart .my-heart-full:hover {
+  opacity: 1;
 }
 @media (min-width: 1024px) {
   main .title {

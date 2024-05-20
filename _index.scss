@@ -232,21 +232,24 @@ h2 {
                     @include mix.center;
                     justify-content: space-between;
                     padding: 15px;
+                    width: 85%;
 
-                    p {
-                        font-size: 17px;
-                        font-weight: 300;
-                        margin: 5px 0;
+                    .card-text {
+                        p {
+                            font-size: 17px;
+                            font-weight: 300;
+                            margin: 5px 0;
+                        }
                     }
-                }
 
-                .icon-heart {
-                    position: relative;
-                    right: 15px;
-                    @include mix.icon-heart;
-
-                    i {
-                        font-weight: 400;
+                    .icons-heart {
+                        i {
+                            position: absolute;
+                        }
+                        
+                        .my-heart-full {
+                            @include mix.icon-heart-full;
+                        }
                     }
                 }
             }
@@ -273,9 +276,9 @@ footer {
         filter: invert(1);
 
         @media (min-width: m.$desktop) {
-            height: 2%;
-            width: 6%;
-            padding-left: 30px;
+            height: 6%;
+            width: 12%;
+            padding-left: 80px;
             padding-bottom: 0;
 
         }

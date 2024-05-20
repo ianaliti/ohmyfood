@@ -35,19 +35,20 @@
     }
 }
 
-@mixin icon-heart {
+@mixin icon-heart-full {
 
-    & i::before {
-        content: "\f004";
-        transition:0.5s cubic-bezier(.86, .01, .15, .99);
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 2s;
+
+    &::before {
+        background-image: linear-gradient(c.$purple-color, c.$light-purple);
+        background-clip: text;
+        color: transparent;
     }
 
-    &:hover i::before {
-        color: c.$purple-color;
-        background: linear-gradient(c.$purple-color, c.$light-purple);
-        background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 900;
+    &:hover {
+        opacity: 1;
     }
 }
 
