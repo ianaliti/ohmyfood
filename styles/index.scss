@@ -234,6 +234,18 @@ h2 {
                     padding: 15px;
                     width: 85%;
 
+                    @media(max-width: m.$mobile) {
+                        width: 80%;
+                    }
+
+                    @media(width: m.$laptop) {
+                        width: 90%;
+                    }
+
+                    @media(min-width: m.$fourk) {
+                        width: 90%;
+                    }
+
                     .card-text {
                         p {
                             font-size: 17px;

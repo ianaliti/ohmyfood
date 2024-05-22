@@ -291,6 +291,21 @@ h2 {
   padding: 15px;
   width: 85%;
 }
+@media (max-width: 320px) {
+  .restaurants .resto_cards a .card .card-content {
+    width: 80%;
+  }
+}
+@media (width: 768px) {
+  .restaurants .resto_cards a .card .card-content {
+    width: 90%;
+  }
+}
+@media (min-width: 2560px) {
+  .restaurants .resto_cards a .card .card-content {
+    width: 90%;
+  }
+}
 .restaurants .resto_cards a .card .card-content .card-text p {
   font-size: 17px;
   font-weight: 300;
@@ -374,4 +389,4 @@ footer .a_footers a .footer-p {
   font-weight: 300;
 }
 
-/*# sourceMappingURL=_index.css.map */
+/*# sourceMappingURL=index.css.map */
