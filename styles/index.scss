@@ -12,20 +12,12 @@
 body {
     min-width: m.$mobile;
 
-    .loader-parent {
-        @include mix.loader-parent;
+    .content {
+       @include mix.content;
+    }
 
-        #loader {
-            @include mix.loader;
-        }
-
-        .center {
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            margin: auto;
-        }
+    .loader {
+        @include mix.loader;
     }
 }
 
@@ -258,7 +250,7 @@ h2 {
                         i {
                             position: absolute;
                         }
-                        
+
                         .my-heart-full {
                             @include mix.icon-heart-full;
                         }
