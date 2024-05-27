@@ -38,8 +38,13 @@ Couleurs :
 - Contraintes :
 
 Approche mobile-first: oui
+
 Maquette mobile : oui
+
 Maquette desktop : à improviser
+
 Validation W3C HTML : à passer, warning autorisés
+
 Validation W3C CSS : à passer, warning autorisés
+
 Compatibilité : Dernières versions de Chrome, Firefox & Safari
