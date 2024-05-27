@@ -25,12 +25,10 @@
     font-size: 16px;
     @include center;
     @include shadow(2px, 2px, 5px, 25%);
-    background-size: 500%;
-    background-position: right;
-    transition: all 1s ease;
+    transition: background-color 0.3s ease; // Transition douce pour l'effet de survol
 
     &:hover {
-        background-position: left;
+        background-image: linear-gradient(181deg, lighten($light-purple, $hover-lighten-factor) 5%, lighten($purple-color, $hover-lighten-factor));
         @include shadow(2px, 5px, 3px, 35%);
     }
 }
