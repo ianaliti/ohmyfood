@@ -10,10 +10,6 @@
     filter: drop-shadow($t $r $b darken(c.$grey-color, $br));
 }
 
-@mixin linear-gradient {
-    background-image: linear-gradient(35deg, c.$purple-color, c.$light-purple, c.$purple-color, c.$light-purple);
-}
-
 @mixin btn {
     height: 50px;
     border-radius: 25px;
@@ -28,7 +24,7 @@
     transition: background-color 0.3s ease; // Transition douce pour l'effet de survol
 
     &:hover {
-        background-image: linear-gradient(181deg, lighten($light-purple, $hover-lighten-factor) 5%, lighten($purple-color, $hover-lighten-factor));
+        background-image: linear-gradient(181deg, lighten(c.$light-purple, 5%), lighten(c.$purple-color, 5%));
         @include shadow(2px, 5px, 3px, 35%);
     }
 }
@@ -68,7 +64,7 @@
         content: "";
         width: 100px;
         height: 100px;
-        border: 10px solid #3498db;
+        border: 10px solid c.$purple-color;
         border-top: 10px solid transparent;
         border-radius: 50%;
         animation: spin 1s linear infinite;
