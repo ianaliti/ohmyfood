@@ -7,6 +7,9 @@
 body {
   min-width: 320px;
 }
+body .main-container {
+    width: 100%;
+}
 body .content {
   opacity: 0;
   animation: fadeIn 2s forwards;
