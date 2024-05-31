@@ -308,11 +308,21 @@ h2 {
   font-weight: 300;
   margin: 5px 0;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart:active {
-  color: red;
-}
 .restaurants .resto_cards article .card .card-content .icons-heart i {
   position: absolute;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full:before {
+  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
+  background-clip: text;
+  color: transparent;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full:hover {
+  opacity: 1;
 }
 
 footer {

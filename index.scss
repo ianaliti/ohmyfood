@@ -250,16 +250,13 @@ h2 {
                     }
 
                     .icons-heart {
-                        &:active {
-                            color: red;
-                        }
                         i {
                             position: absolute;
                         }
 
-                        // .my-heart-full {
-                        //     @include mix.icon-heart-full;
-                        // }
+                        .my-heart-full {
+                            @include mix.icon-heart-full;
+                        }
                     }
                 }
             }
