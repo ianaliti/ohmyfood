@@ -21,7 +21,7 @@
     font-size: 16px;
     @include center;
     @include shadow(2px, 2px, 5px, 25%);
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 
     &:hover {
         background-image: linear-gradient(181deg, lighten(c.$light-purple, 5%), lighten(c.$purple-color, 5%));
@@ -40,7 +40,8 @@
         color: transparent;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
         opacity: 1;
     }
 }
@@ -120,8 +121,21 @@
 
 
 @mixin checked {
+
     &:hover>.check {
         display: flex;
+        right: 0;
+        animation: slidein 1s forwards;
+
+        @keyframes slidein {
+            from {
+                right: -5px;
+            }
+
+            to {
+                right: 0;
+            }
+        }
     }
 
     &:hover>.card-title>.card-content>.description {
@@ -129,5 +143,55 @@
         overflow: hidden;
         width: 210px;
         white-space: nowrap;
+    }
+}
+
+
+
+
+
+
+// Mixin pour les styles de base des icônes de cœur
+@mixin icon-heart-base {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: opacity 1s ease-in-out;
+}
+
+// Mixin pour l'état de l'icône de cœur vide
+@mixin heart-empty {
+    opacity: 1; // Icône vide visible par défaut
+}
+
+// Mixin pour l'état de l'icône de cœur plein avec les propriétés spéciales
+@mixin icon-heart-full {
+    opacity: 0;
+    transition-property: all;
+    transition-duration: 2s;
+
+    &:before {
+        background-image: linear-gradient(c.$purple-color, c.$light-purple);
+        background-clip: text;
+        color: transparent;
+    }
+
+    &:hover,
+    &:active {
+        opacity: 1;
+    }
+}
+
+
+// Mixin pour les styles lorsque la case à cocher est cochée
+@mixin heart-checkbox-checked-style {
+    .my-heart-empty {
+        opacity: 0; // Icône vide disparaît
+    }
+
+    .my-heart-full {
+        opacity: 1; // Icône pleine apparaît
     }
 }

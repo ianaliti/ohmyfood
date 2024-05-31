@@ -7,20 +7,10 @@
 body {
   min-width: 320px;
 }
-body .main-container {
-    width: 100%;
-}
 body .content {
   opacity: 0;
   animation: fadeIn 2s forwards;
   animation-delay: 2s;
-}
-@keyframes fadeOut {
-  to {
-    display: none;
-    opacity: 0;
-    visibility: hidden;
-  }
 }
 @keyframes fadeIn {
   to {
@@ -34,13 +24,20 @@ body .loader {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
   animation: fadeOut 2s forwards;
   animation-delay: 2s;
+}
+@keyframes fadeOut {
+  to {
+    display: none;
+    opacity: 0;
+    visibility: hidden;
+  }
 }
 body .loader:before {
   content: "";
@@ -240,35 +237,37 @@ h2 {
     justify-content: space-between;
   }
 }
-.restaurants .resto_cards a {
+.restaurants .resto_cards article {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 15px 0;
-  text-decoration: none;
-  color: black;
-  font-size: 18px;
-  font-weight: 700;
   background-color: white;
   border-radius: 20px;
   filter: drop-shadow(0 4px 15px #dadada);
 }
 @media (min-width: 1024px) {
-  .restaurants .resto_cards a {
+  .restaurants .resto_cards article {
     width: 47%;
   }
 }
-.restaurants .resto_cards a .card {
+.restaurants .resto_cards article .card {
   width: 100%;
 }
-.restaurants .resto_cards a .card .card-image {
+.restaurants .resto_cards article .card a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+  font-weight: 700;
+}
+.restaurants .resto_cards article .card .card-image {
   width: 100%;
   height: 210px;
   object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
-.restaurants .resto_cards a .card .nouveau {
+.restaurants .resto_cards article .card .nouveau {
   position: absolute;
   background-color: rgb(153, 226, 208);
   color: rgb(0, 135, 102);
@@ -282,7 +281,7 @@ h2 {
   align-items: center;
   justify-content: center;
 }
-.restaurants .resto_cards a .card .card-content {
+.restaurants .resto_cards article .card .card-content {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -291,40 +290,77 @@ h2 {
   width: 85%;
 }
 @media (max-width: 320px) {
-  .restaurants .resto_cards a .card .card-content {
+  .restaurants .resto_cards article .card .card-content {
     width: 80%;
   }
 }
 @media (width: 768px) {
-  .restaurants .resto_cards a .card .card-content {
+  .restaurants .resto_cards article .card .card-content {
     width: 90%;
   }
 }
 @media (min-width: 2560px) {
-  .restaurants .resto_cards a .card .card-content {
+  .restaurants .resto_cards article .card .card-content {
     width: 90%;
   }
 }
-.restaurants .resto_cards a .card .card-content .card-text p {
+.restaurants .resto_cards article .card .card-content .card-text p {
   font-size: 17px;
   font-weight: 300;
   margin: 5px 0;
 }
-.restaurants .resto_cards a .card .card-content .icons-heart i {
-  position: absolute;
+.restaurants .resto_cards article .card .card-content .icons-heart {
+  position: relative;
+  cursor: pointer;
 }
-.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full {
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-label {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-empty {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: opacity 1s ease-in-out;
   opacity: 0;
   transition-property: all;
   transition-duration: 2s;
 }
-.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full::before {
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:before {
   background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
   color: transparent;
 }
-.restaurants .resto_cards a .card .card-content .icons-heart .my-heart-full:hover {
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:hover, .restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:active {
   opacity: 1;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:checked + .heart-label .my-heart-empty {
+  opacity: 0;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:checked + .heart-label .my-heart-full {
+  opacity: 1;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:not(:checked) + .heart-label .my-heart-empty {
+  opacity: 1;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:not(:checked) + .heart-label .my-heart-full {
+  opacity: 0;
 }
 
 footer {
@@ -461,12 +497,12 @@ main .title .icons-heart .my-heart-full {
   transition-property: all;
   transition-duration: 2s;
 }
-main .title .icons-heart .my-heart-full::before {
+main .title .icons-heart .my-heart-full:before {
   background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
   color: transparent;
 }
-main .title .icons-heart .my-heart-full:hover {
+main .title .icons-heart .my-heart-full:hover, main .title .icons-heart .my-heart-full:active {
   opacity: 1;
 }
 @media (min-width: 1024px) {
@@ -490,7 +526,7 @@ main .meal-menu {
     opacity: 0;
   }
   100% {
-    opacity: 100;
+    opacity: 1;
   }
 }
 main .meal-menu .menu-title {
@@ -526,18 +562,27 @@ main .meal-menu .cards .card {
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
   opacity: 0;
-  transition: all 0.5s;
 }
 @keyframes menushow {
   0% {
     opacity: 0;
   }
   100% {
-    opacity: 100;
+    opacity: 1;
   }
 }
 main .meal-menu .cards .card:hover > .check {
   display: flex;
+  right: 0;
+  animation: slidein 1s forwards;
+}
+@keyframes slidein {
+  from {
+    right: -5px;
+  }
+  to {
+    right: 0;
+  }
 }
 main .meal-menu .cards .card:hover > .card-title > .card-content > .description {
   text-overflow: ellipsis;
@@ -610,6 +655,8 @@ main .meal-menu .cards .card .check {
   margin-left: 5px;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
+  position: relative;
+  right: -30px;
 }
 main .meal-menu .cards .card .check i {
   background-color: white;
