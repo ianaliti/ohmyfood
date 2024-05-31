@@ -181,13 +181,9 @@ h2 {
             justify-content: space-between;
         }
 
-        a {
+        article {
             @include mix.center;
             margin: 15px 0;
-            text-decoration: none;
-            color: black;
-            font-size: 18px;
-            font-weight: 700;
             background-color: white;
             border-radius: 20px;
             @include mix.shadow(0, 4px, 15px, 10);
@@ -198,6 +194,13 @@ h2 {
 
             .card {
                 width: 100%;
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 18px;
+                    font-weight: 700;
+                }
 
                 .card-image {
                     width: 100%;
@@ -247,13 +250,16 @@ h2 {
                     }
 
                     .icons-heart {
+                        &:active {
+                            color: red;
+                        }
                         i {
                             position: absolute;
                         }
 
-                        .my-heart-full {
-                            @include mix.icon-heart-full;
-                        }
+                        // .my-heart-full {
+                        //     @include mix.icon-heart-full;
+                        // }
                     }
                 }
             }
