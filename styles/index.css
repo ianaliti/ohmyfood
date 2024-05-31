@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
 * {
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -309,8 +308,45 @@ h2 {
   font-weight: 300;
   margin: 5px 0;
 }
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full {
+  opacity: 0;
+  transition-property: all;
+  transition-duration: 2s;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full::before {
+  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
+  background-clip: text;
+  color: transparent;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full:hover {
+  opacity: 1;
+}
 .restaurants .resto_cards article .card .card-content .icons-heart input {
   display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart ~ label::before {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart:checked ~ label::before {
+  display: block;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart1 ~ label::before {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart1:checked ~ label::before {
+  display: block;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart2 ~ label::before {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart2:checked ~ label::before {
+  display: block;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart3 ~ label::before {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart3:checked ~ label::before {
+  display: block;
 }
 .restaurants .resto_cards article .card .card-content .icons-heart label {
   position: absolute;
@@ -390,270 +426,4 @@ footer .a_footers a .footer-p {
   font-weight: 300;
 }
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-header .logo a {
-  left: 17px;
-  position: absolute;
-  color: black;
-}
-@media (min-width: 768px) {
-  header .logo a {
-    left: 170px;
-  }
-}
-@media (min-width: 2560px) {
-  header .logo a {
-    left: 710px;
-  }
-}
-header .header-banner img {
-  width: 100%;
-  height: 275px;
-  object-fit: cover;
-}
-
-main {
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  main {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-}
-main .menu {
-  background-color: rgb(243, 243, 243);
-  margin-top: -30px;
-  border-radius: 25px 25px 0 0;
-  position: relative;
-  width: 100%;
-}
-@media (min-width: 1024px) {
-  main .menu {
-    width: 80%;
-    flex-direction: column;
-  }
-}
-main .title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  padding: 20px 13px 0;
-  width: 85%;
-}
-main .title h2 {
-  font-family: "Shrikhand", serif;
-  font-size: 28px;
-  font-weight: 400;
-  font-style: italic;
-}
-main .title .icons-heart i {
-  position: absolute;
-}
-main .title .icons-heart .my-heart-full {
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 2s;
-}
-main .title .icons-heart .my-heart-full::before {
-  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
-  background-clip: text;
-  color: transparent;
-}
-main .title .icons-heart .my-heart-full:hover {
-  opacity: 1;
-}
-@media (min-width: 1024px) {
-  main .title {
-    justify-content: center;
-    margin-top: 20px;
-  }
-  main .title i {
-    margin-left: 24px;
-  }
-}
-main .meal-menu {
-  margin: 20px 13px;
-  animation: menushow 2.5s ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-@keyframes menushow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-main .meal-menu .menu-title {
-  font-size: 16px;
-  font-weight: 300;
-  text-transform: uppercase;
-  width: 100%;
-  margin: initial;
-}
-main .meal-menu .border-bottom {
-  width: 10%;
-  border-bottom: 3px solid rgb(153, 226, 208);
-  margin-top: 5px;
-}
-main .meal-menu .cards {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 15px;
-  margin: 15px 0;
-}
-main .meal-menu .cards .card {
-  width: 95%;
-  background-color: white;
-  border-radius: 15px;
-  font-size: 18px;
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-  filter: drop-shadow(2px 2px 5px #b3b3b3);
-  animation: menushow 2.5s ease;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
-  opacity: 0;
-}
-@keyframes menushow {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-main .meal-menu .cards .card:hover > .check {
-  display: flex;
-  right: 0;
-  animation: slidein 1s forwards;
-}
-@keyframes slidein {
-  from {
-    right: -5px;
-  }
-  to {
-    right: 0;
-  }
-}
-main .meal-menu .cards .card:hover > .card-title > .card-content > .description {
-  text-overflow: ellipsis;
-  overflow: hidden;
-  width: 210px;
-  white-space: nowrap;
-}
-main .meal-menu .cards .card:nth-child(1) {
-  animation-delay: 0.5s;
-}
-main .meal-menu .cards .card:nth-child(2) {
-  animation-delay: 1s;
-}
-main .meal-menu .cards .card:nth-child(3) {
-  animation-delay: 1.5s;
-}
-main .meal-menu .cards .card:nth-child(4) {
-  animation-delay: 2s;
-}
-main .meal-menu .cards .card:nth-child(5) {
-  animation-delay: 2.5s;
-}
-main .meal-menu .cards .card:nth-child(6) {
-  animation-delay: 3s;
-}
-main .meal-menu .cards .card:nth-child(7) {
-  animation-delay: 3.5s;
-}
-main .meal-menu .cards .card:nth-child(8) {
-  animation-delay: 4s;
-}
-main .meal-menu .cards .card:nth-child(9) {
-  animation-delay: 4.5s;
-}
-main .meal-menu .cards .card .card-title {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 13px 10px;
-}
-main .meal-menu .cards .card .card-title .card-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-between;
-  font-weight: 300;
-  font-size: 15px;
-  padding-top: 5px;
-}
-main .meal-menu .cards .card .card-title .card-content .description {
-  font-weight: 300;
-}
-@media (max-width: 320px) {
-  main .meal-menu .cards .card .card-title .card-content .description {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    width: 220px;
-    white-space: nowrap;
-  }
-}
-main .meal-menu .cards .card .card-title .card-content p {
-  font-weight: 500;
-}
-main .meal-menu .cards .card .check {
-  display: none;
-  justify-content: center;
-  align-items: center;
-  background-color: rgb(153, 226, 208);
-  width: 59px;
-  margin-left: 5px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  position: relative;
-  right: -30px;
-}
-main .meal-menu .cards .card .check i {
-  background-color: white;
-  border-radius: 25px;
-  color: rgb(153, 226, 208);
-}
-main .btn {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-main .btn button {
-  height: 50px;
-  border-radius: 25px;
-  background-image: linear-gradient(181deg, #FF79DA 5%, rgb(147, 86, 220));
-  color: #F5F5F5;
-  border: none;
-  padding: 13px 18px;
-  font-weight: 500;
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  filter: drop-shadow(2px 2px 5px #b3b3b3);
-  transition: background-color 0.3s ease;
-  margin: 10px 0 40px;
-  width: 190px;
-}
-main .btn button:hover {
-  background-image: linear-gradient(181deg, #ff93e1, #a16be0);
-  filter: drop-shadow(2px 5px 3px #9a9a9a);
-}
-
-/*# sourceMappingURL=restaurants.css.map */
+/*# sourceMappingURL=index.css.map */

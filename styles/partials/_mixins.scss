@@ -148,3 +148,12 @@
 
 
 
+@mixin heart-display {
+    & ~ label::before {
+        display: none;
+    }
+
+    &:checked ~ label::before {
+        display: block;
+    }
+}
