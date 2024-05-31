@@ -309,58 +309,30 @@ h2 {
   font-weight: 300;
   margin: 5px 0;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart {
-  position: relative;
-  cursor: pointer;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox {
+.restaurants .resto_cards article .card .card-content .icons-heart input {
   display: none;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-label {
-  position: relative;
+.restaurants .resto_cards article .card .card-content .icons-heart #heart-checkbox ~ label::before {
+  display: none;
+}
+.restaurants .resto_cards article .card .card-content .icons-heart #heart-checkbox:checked ~ label::before {
   display: block;
-  width: 100%;
-  height: 100%;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-empty {
+.restaurants .resto_cards article .card .card-content .icons-heart label {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 1s ease-in-out;
-  opacity: 1;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  transition: opacity 1s ease-in-out;
+.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full {
   opacity: 0;
   transition-property: all;
   transition-duration: 2s;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:before {
+.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full::before {
   background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
   color: transparent;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:hover, .restaurants .resto_cards article .card .card-content .icons-heart .heart-label .my-heart-full:active {
+.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full:hover {
   opacity: 1;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:checked + .heart-label .my-heart-empty {
-  opacity: 0;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:checked + .heart-label .my-heart-full {
-  opacity: 1;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:not(:checked) + .heart-label .my-heart-empty {
-  opacity: 1;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart .heart-checkbox:not(:checked) + .heart-label .my-heart-full {
-  opacity: 0;
 }
 
 footer {
@@ -497,12 +469,12 @@ main .title .icons-heart .my-heart-full {
   transition-property: all;
   transition-duration: 2s;
 }
-main .title .icons-heart .my-heart-full:before {
+main .title .icons-heart .my-heart-full::before {
   background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
   background-clip: text;
   color: transparent;
 }
-main .title .icons-heart .my-heart-full:hover, main .title .icons-heart .my-heart-full:active {
+main .title .icons-heart .my-heart-full:hover {
   opacity: 1;
 }
 @media (min-width: 1024px) {
