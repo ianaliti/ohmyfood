@@ -262,7 +262,8 @@ h2 {
 .restaurants .resto_cards article .card .card-image {
   width: 100%;
   height: 210px;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 }
@@ -308,6 +309,9 @@ h2 {
   font-weight: 300;
   margin: 5px 0;
 }
+.restaurants .resto_cards article .card .card-content .icons-heart i {
+  position: absolute;
+}
 .restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full {
   opacity: 0;
   transition-property: all;
@@ -315,53 +319,11 @@ h2 {
 }
 .restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full::before {
   background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
-  background-clip: text;
+  -webkit-background-clip: text;
+          background-clip: text;
   color: transparent;
 }
 .restaurants .resto_cards article .card .card-content .icons-heart .my-heart-full:hover {
-  opacity: 1;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart input {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart ~ label::before {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart:checked ~ label::before {
-  display: block;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart1 ~ label::before {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart1:checked ~ label::before {
-  display: block;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart2 ~ label::before {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart2:checked ~ label::before {
-  display: block;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart3 ~ label::before {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart3:checked ~ label::before {
-  display: block;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart label {
-  position: absolute;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full {
-  opacity: 0;
-  transition-property: all;
-  transition-duration: 2s;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full::before {
-  background-image: linear-gradient(rgb(147, 86, 220), #FF79DA);
-  background-clip: text;
-  color: transparent;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart label .my-heart-full:hover {
   opacity: 1;
 }
 
@@ -424,6 +386,4 @@ footer .a_footers a .a_footer .footer-p-icon {
 }
 footer .a_footers a .footer-p {
   font-weight: 300;
-}
-
-/*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */

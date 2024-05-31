@@ -252,36 +252,12 @@ h2 {
                     // Appliquer les mixins aux sélecteurs appropriés
                     .icons-heart {
 
+                        i {
+                            position: absolute
+                        }
+
                         .my-heart-full {
                             @include mix.icon-heart-full;
-                        }
-
-                        input {
-                            display: none
-                        }
-
-                        #heart {
-                            @include mix.heart-display;
-                        }
-
-                        #heart1 {
-                            @include mix.heart-display;
-                        }
-
-                        #heart2 {
-                            @include mix.heart-display;
-                        }
-
-                        #heart3 {
-                            @include mix.heart-display;
-                        }
-
-                        label {
-                            position: absolute;
-
-                            .my-heart-full {
-                                @include mix.icon-heart-full;
-                            }
                         }
                     }
                 }
