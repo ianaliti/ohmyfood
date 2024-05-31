@@ -312,12 +312,6 @@ h2 {
 .restaurants .resto_cards article .card .card-content .icons-heart input {
   display: none;
 }
-.restaurants .resto_cards article .card .card-content .icons-heart #heart-checkbox ~ label::before {
-  display: none;
-}
-.restaurants .resto_cards article .card .card-content .icons-heart #heart-checkbox:checked ~ label::before {
-  display: block;
-}
 .restaurants .resto_cards article .card .card-content .icons-heart label {
   position: absolute;
 }

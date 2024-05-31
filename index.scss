@@ -256,19 +256,8 @@ h2 {
                             display: none;
                         }
 
-                        #heart-checkbox {
-
-                            & ~ label::before {
-                                display: none;
-                            }
-
-                            &:checked ~ label::before {
-                                display: block;
-                            }
-                        }
 
                         label {
-             
                                 position: absolute;
              
                             .my-heart-full {

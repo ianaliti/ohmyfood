@@ -148,18 +148,3 @@
 
 
 
-
-
-
-
-@mixin icons-hearts {
-    position: absolute;
-
-    &:checked ~ .my-heart-empty{
-        display: none;
-    }
-
-    &:checked ~ .my-heart-full{
-        display: flex;
-    }
-}
